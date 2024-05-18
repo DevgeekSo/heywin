@@ -340,6 +340,47 @@
         });
       });
     });
+const accessKey = 'oBZt77Zc4q8PxbcqvUoBUnPmQgPgY1RWSDcPZeCr3YI';
+
+fetch('https://api.unsplash.com/photos/random?count=5&client_id=' + accessKey)
+  .then(response => response.json())
+  .then(data => {
+    // Process the response data
+    data.forEach(photo => {
+      const imageUrl = photo.urls.regular;
+      const caption = photo.alt_description;
+
+      // Create a new post element and append it to the content
+      createPost(imageUrl, caption);
+    });
+  })
+  .catch(error => console.log('Error fetching data:', error));
+
+function createPost(imageUrl, caption) {
+  const content = document.querySelector('.content');
+
+  const post = document.createElement('div');
+  post.classList.add('post');
+
+  const postContent = `
+    <div class="post-header">
+      <img src="${imageUrl}" alt="User">
+      <div class="username">User</div>
+    </div>
+    <div class="post-content">
+      <img src="${imageUrl}" alt="Post">
+    </div>
+    <div class="post-caption">${caption}</div>
+    <div class="post-actions">
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-comment"></i>
+      <i class="fas fa-share"></i>
+    </div>
+  `;
+
+  post.innerHTML = postContent;
+  content.appendChild(post);
+}
   </script>
 </body>
 
