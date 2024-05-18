@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heywin.com</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #131313;
+      color: #333;
+    }
+
+    .nav-bar {
+      background-color: #393939;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-bar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-bar .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-bar .logo h1 {
+      font-size: 20px;
+      color: #007bff;
+    }
+
+    .nav-bar .icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-bar .icons i {
+      font-size: 24px;
+      margin-left: 20px;
+      cursor: pointer;
+      color: #007bff;
+    }
+
+    .content {
+      padding: 80px 20px 60px;
+    }
+
+    .stories {
+      display: flex;
+      overflow-x: auto;
+      padding: 10px 0;
+      margin-bottom: 20px;
+      background-color: #393939;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      color: #ffffff;
+    }
+
+    .story {
+      flex: 0 0 auto;
+      margin-right: 10px;
+      text-align: center;
+    }
+
+    .story img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #007bff;
+      margin-bottom: 5px;
+    }
+
+    .post {
+      background-color: #393939;
+      padding: 20px;
+      color: #ffffff;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .post .post-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .post .post-header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .post .post-header .username {
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .post .post-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .post .post-caption {
+      margin-bottom: 10px;
+    }
+
+    .post .post-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .post .post-actions i {
+      font-size: 24px;
+      cursor: pointer;
+      color: #007bff;
+    }
+
+    .bottom-nav {
+      background-color: #393939;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      z-index: 1000;
+    }
+
+    .bottom-nav i {
+      font-size: 24px;
+      cursor: pointer;
+      color: #007bff;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="nav-bar">
+    <div class="logo">
+      <img src="https://blog.tubikstudio.com/wp-content/uploads/2015/12/ghost-mascot-logo-design-300x225.png" alt="Logo">
+      <h1>Heywin</h1>
+    </div>
+    <div class="icons">
+      <i class="fas fa-bell" onclick="location.href='https://myflyingbutterflygame.netlify.app'"></i>
+      <i class="fas fa-comments" onclick="location.href='https://sizzichatbot.netlify.app'"></i>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="stories">
+      <div class="story">
+        <img src="img/254b0457df2facf12b95d749117aaabc.jpg" alt="Story 1">
+        <div>Simmi</div>
+      </div>
+      <div class="story">
+        <img src="img/images.jpeg" alt="Story 2">
+        <div>Abhay</div>
+      </div>
+      <div class="story">
+        <img src="img/WhatsApp Image 2024-05-18 at 18.31.15_a21d5eb2.jpg"width=100% alt="Story 1">
+        <div>Ananya</div>
+      </div>
+      <div class="story">
+        <img src="img/images (1).jpeg" alt="Story 1">
+        <div>Keshav</div>
+      </div>
+      <div class="story">
+        <img src="img/965a33cf28be7e31250b6b87f1409a89.jpg" alt="Story 2">
+        <div>Mahi</div>
+      </div>
+      <div class="story">
+        <img src="img/desktop-wallpaper-cool-boy-boy-pic.jpg" alt="Story 2">
+        <div>Aman</div>
+      </div>
+      <div class="story">
+        <img src="img/d7ac8f7ec220e555878261e1957dfb83.jpg" alt="Story 1">
+        <div>Khushi</div>
+      </div>
+      <!-- Add more stories as needed -->
+    </div>
+
+    <div class="post">
+      <div class="post-header">
+        <img src="img/Picsart_23-06-04_12-20-11-461.webp" alt="User 1">
+        <div class="username">User 1</div>
+      </div>
+      <div class="post-content">
+        <img src="img/Picsart_23-06-04_12-20-11-461.webp" alt="Post 1">
+      </div>
+      <div class="post-caption">
+        This is a caption for the post.
+      </div>
+      <div class="post-actions">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-comment"></i>
+        <i class="fas fa-share"></i>
+      </div>
+    </div>
+    <div class="post">
+      <div class="post-header">
+        <img src="img/Picsart_23-06-04_12-20-11-461.webp" alt="User 1">
+        <div class="username">User 2</div>
+      </div>
+      <div class="post-content">
+        <img src="img/IMG_20190513_223120_867.jpg" alt="Post 1">
+      </div>
+      <div class="post-caption">
+        This is a caption for the post.
+      </div>
+      <div class="post-actions">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-comment"></i>
+        <i class="fas fa-share"></i>
+      </div>
+    </div>
+    <div class="post">
+      <div class="post-header">
+        <img src="img/Picsart_23-06-04_12-20-11-461.webp" alt="User 1">
+        <div class="username">User 3</div>
+      </div>
+      <div class="post-content">
+        <img src="img/5331.jpg" alt="Post 1">
+      </div>
+      <div class="post-caption">
+        This is a caption for the post.
+      </div>
+      <div class="post-actions">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-comment"></i>
+        <i class="fas fa-share"></i>
+      </div>
+    </div>
+    <div class="post">
+      <div class="post-header">
+        <img src="img/5298.jpg" alt="User 1">
+        <div class="username">User 4</div>
+      </div>
+      <div class="post-content">
+        <img src="img/5298.jpg" alt="Post 1">
+      </div>
+      <div class="post-caption">
+        This is a caption for the post.
+      </div>
+      <div class="post-actions">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-comment"></i>
+        <i class="fas fa-share"></i>
+      </div>
+    </div>
+    <div class="post">
+      <div class="post-header">
+        <img src="img/5298.jpg" alt="User 1">
+        <div class="username">User 5</div>
+      </div>
+      <div class="post-content">
+        <img src="img/5374.jpg" alt="Post 1">
+      </div>
+      <div class="post-caption">
+        This is a caption for the post.
+      </div>
+      <div class="post-actions">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-comment"></i>
+        <i class="fas fa-share"></i>
+      </div>
+    </div>
+    <div class="post">
+      <div class="post-header">
+        <img src="img/5298.jpg" alt="User 1">
+        <div class="username">User 6</div>
+      </div>
+      <div class="post-content">
+        <img src="img/4927.jpg" alt="Post 1">
+      </div>
+      <div class="post-caption">
+        This is a caption for the post.
+      </div>
+      <div class="post-actions">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-comment"></i>
+        <i class="fas fa-share"></i>
+      </div>
+    </div>
+    <!-- Add more posts as needed -->
+  </div>
+
+  <div class="bottom-nav">
+    <i class="fas fa-home" onclick="location.href='index.html'"></i>
+    <i class="fas fa-search" onclick="location.href='https://www.google.com/search'"></i>
+    <i class="fas fa-fire" onclick="location.href='https://www.youtube.com/shorts'"></i>
+    <i class="fas fa-user" onclick="location.href='profile.html'"></i>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all like icons and add click event listeners
+      const likeIcons = document.querySelectorAll('.like');
+      likeIcons.forEach(icon => {
+        icon.addEventListener('click', () => {
+          // Toggle the color of the heart icon
+          icon.classList.toggle('liked');
+        });
+      });
+
+      // Get all comment icons and add click event listeners
+      const commentIcons = document.querySelectorAll('.comment');
+      commentIcons.forEach(icon => {
+        icon.addEventListener('click', () => {
+          // Implement your comment functionality here
+          console.log('Comment clicked');
+        });
+      });
+
+      // Get all share icons and add click event listeners
+      const shareIcons = document.querySelectorAll('.share');
+      shareIcons.forEach(icon => {
+        icon.addEventListener('click', () => {
+          // Implement your share functionality here
+          console.log('Share clicked');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
