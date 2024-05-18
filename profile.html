@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Heywin.com</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #161616;
+      color: #333;
+    }
+
+    .nav-bar {
+      background-color:#393939;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-bar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-bar .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-bar .logo h1 {
+      font-size: 20px;
+      color: #007bff;
+    }
+
+    .nav-bar .icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-bar .icons i {
+      font-size: 24px;
+      margin-left: 20px;
+      cursor: pointer;
+      color: #007bff;
+    }
+
+    .profile-content {
+      padding: 80px 20px 60px;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      background-color: #393939;
+      padding: 20px;
+      border-radius: 10px;
+      color: #fffbfb;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .profile-header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 20px;
+      border: 2px solid #007bff;
+    }
+
+    .profile-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-details .editable {
+      margin: 10px 0;
+      padding: 5px;
+      border: 1px solid#393939;
+      border-radius: 5px;
+    }
+
+    .profile-details .editable[contenteditable="true"] {
+      border: 1px solid #007bff;
+    }
+
+    .profile-details .username {
+      font-size: 24px;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .profile-stats {
+      display: flex;
+      justify-content: space-around;
+      background-color:#393939;
+      padding: 20px;
+      color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .profile-stats div {
+      text-align: center;
+    }
+
+    .profile-stats div span {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .stories {
+      display: flex;
+      overflow-x: auto;
+      padding: 10px 0;
+      margin-bottom: 20px;
+      background-color: #393939;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      color: #ffffff;
+    }
+
+    .story {
+      flex: 0 0 auto;
+      margin-right: 10px;
+      text-align: center;
+    }
+
+    .story img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #007bff;
+      margin-bottom: 5px;
+    }
+    .bottom-nav {
+      background-color: #393939;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      z-index: 1000;
+    }
+
+    .bottom-nav i {
+      font-size: 24px;
+      cursor: pointer;
+      color: #007bff;
+    }
+
+    .edit-btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .edit-btn.save {
+      background-color: #28a745;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="nav-bar">
+    <div class="logo">
+        <img src="https://blog.tubikstudio.com/wp-content/uploads/2015/12/ghost-mascot-logo-design-300x225.png" alt="Logo">
+        <h1>Heywin</h1>
+    </div>
+    <div class="icons">
+        <i class="fas fa-bell" onclick="location.href='https://myflyingbutterflygame.netlify.app'"></i>
+        <i class="fas fa-comments" onclick="location.href='https://sizzichatbot.netlify.app'"></i>
+      <i class="fas fa-edit" id="editProfile"></i>
+    </div>
+  </div>
+
+  <div class="profile-content">
+    <div class="profile-header">
+      <img src="img/Picsart_23-06-04_12-20-11-461.webp" alt="User DP">
+      <div class="profile-details">
+        <div class="editable username" id="username" contenteditable="false">Sandeep Hinwar</div>
+        <div class="editable bio" id="bio" contenteditable="false">This is the bio of the user. It provides a brief description.</div>
+        <div class="editable links" id="links" contenteditable="false">Website: <a href="#">sandeep12.unaux.com</a></div>
+        <div class="editable achievements" id="achievements" contenteditable="false">Achievements: Lorem ipsum dolor sit amet.</div>
+      </div>
+    </div>
+
+    <div class="profile-stats">
+      <div>
+        <span>10</span>
+        Photos
+      </div>
+      <div>
+        <span>5</span>
+        Videos
+      </div>
+      <div>
+        <span>8</span>
+        Stories
+      </div>
+      <div>
+        <span>12</span>
+        To-Do List
+      </div>
+    </div>
+
+    <div class="stories">
+        <div class="story">
+          <img src="img/254b0457df2facf12b95d749117aaabc.jpg" alt="Story 1">
+          <div>Simmi</div>
+        </div>
+        <div class="story">
+          <img src="img/images.jpeg" alt="Story 2">
+          <div>Abhay</div>
+        </div>
+        <div class="story">
+          <img src="img/WhatsApp Image 2024-05-18 at 18.31.15_a21d5eb2.jpg"width=100% alt="Story 1">
+          <div>Ananya</div>
+        </div>
+        <div class="story">
+          <img src="img/images (1).jpeg" alt="Story 1">
+          <div>Keshav</div>
+        </div>
+        <div class="story">
+          <img src="img/965a33cf28be7e31250b6b87f1409a89.jpg" alt="Story 2">
+          <div>Mahi</div>
+        </div>
+        <div class="story">
+          <img src="img/desktop-wallpaper-cool-boy-boy-pic.jpg" alt="Story 2">
+          <div>Aman</div>
+        </div>
+        <div class="story">
+          <img src="img/d7ac8f7ec220e555878261e1957dfb83.jpg" alt="Story 1">
+          <div>Khushi</div>
+        </div>
+        <!-- Add more stories as needed -->
+      </div>
+
+  <div class="bottom-nav">
+    <i class="fas fa-home" onclick="location.href='index.html'"></i>
+    <i class="fas fa-search" onclick="location.href='https://www.google.com/search"></i>
+    <i class="fas fa-fire" onclick="location.href='https://www.youtube.com/shorts'"></i>
+    <i class="fas fa-user" onclick="location.href='profile.html'"></i>
+  </div>
+
+  <script>
+    const editButton = document.getElementById('editProfile');
+    let isEditing = false;
+  
+    editButton.addEventListener('click', () => {
+      const username = document.getElementById('username');
+      const bio = document.getElementById('bio');
+      const links = document.getElementById('links');
+      const achievements = document.getElementById('achievements');
+  
+      if (isEditing) {
+        // If saving changes
+        // Update the content of editable fields
+        username.innerText = username.textContent;
+        bio.innerText = bio.textContent;
+        links.innerText = links.textContent;
+        achievements.innerText = achievements.textContent;
+        
+        // Disable content editing
+        username.contentEditable = 'false';
+        bio.contentEditable = 'false';
+        links.contentEditable = 'false';
+        achievements.contentEditable = 'false';
+        
+        // Change button icon and text
+        editButton.classList.remove('save');
+        editButton.innerHTML = '<i class="fas fa-edit"></i>';
+        isEditing = false;
+      } else {
+        // If editing
+        // Enable content editing
+        username.contentEditable = 'true';
+        bio.contentEditable = 'true';
+        links.contentEditable = 'true';
+        achievements.contentEditable = 'true';
+        
+        // Change button icon and text
+        editButton.classList.add('save');
+        editButton.innerHTML = '<i class="fas fa-save"></i>';
+        isEditing = true;
+      }
+    });
+  </script>
+  
+</body>
+</html>
