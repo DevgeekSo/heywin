@@ -58,7 +58,7 @@
     }
 
     .profile-content {
-      padding: 80px 20px 60px;
+      padding: 80px 20px 100px; /* Adjusted bottom padding to ensure content is not hidden by bottom-nav */
     }
 
     .profile-header {
@@ -148,6 +148,7 @@
       border: 3px solid #007bff;
       margin-bottom: 5px;
     }
+
     .bottom-nav {
       background-color: #393939;
       display: flex;
@@ -193,7 +194,7 @@
     <div class="icons">
         <i class="fas fa-bell" onclick="location.href='https://myflyingbutterflygame.netlify.app'"></i>
         <i class="fas fa-comments" onclick="location.href='https://sizzichatbot.netlify.app'"></i>
-      <i class="fas fa-edit" id="editProfile"></i>
+        <i class="fas fa-edit" id="editProfile"></i>
     </div>
   </div>
 
@@ -237,7 +238,7 @@
           <div>Abhay</div>
         </div>
         <div class="story">
-          <img src="img/WhatsApp Image 2024-05-18 at 18.31.15_a21d5eb2.jpg"width=100% alt="Story 1">
+          <img src="img/WhatsApp Image 2024-05-18 at 18.31.15_a21d5eb2.jpg" width="100%" alt="Story 1">
           <div>Ananya</div>
         </div>
         <div class="story">
@@ -258,10 +259,11 @@
         </div>
         <!-- Add more stories as needed -->
       </div>
+  </div>
 
   <div class="bottom-nav">
     <i class="fas fa-home" onclick="location.href='index.html'"></i>
-    <i class="fas fa-search" onclick="location.href='https://www.google.com/search"></i>
+    <i class="fas fa-search" onclick="location.href='https://www.google.com/search'"></i>
     <i class="fas fa-fire" onclick="location.href='https://www.youtube.com/shorts'"></i>
     <i class="fas fa-user" onclick="location.href='profile.html'"></i>
   </div>
@@ -269,13 +271,13 @@
   <script>
     const editButton = document.getElementById('editProfile');
     let isEditing = false;
-  
+
     editButton.addEventListener('click', () => {
       const username = document.getElementById('username');
       const bio = document.getElementById('bio');
       const links = document.getElementById('links');
       const achievements = document.getElementById('achievements');
-  
+
       if (isEditing) {
         // If saving changes
         // Update the content of editable fields
@@ -283,13 +285,13 @@
         bio.innerText = bio.textContent;
         links.innerText = links.textContent;
         achievements.innerText = achievements.textContent;
-        
+
         // Disable content editing
         username.contentEditable = 'false';
         bio.contentEditable = 'false';
         links.contentEditable = 'false';
         achievements.contentEditable = 'false';
-        
+
         // Change button icon and text
         editButton.classList.remove('save');
         editButton.innerHTML = '<i class="fas fa-edit"></i>';
@@ -301,7 +303,7 @@
         bio.contentEditable = 'true';
         links.contentEditable = 'true';
         achievements.contentEditable = 'true';
-        
+
         // Change button icon and text
         editButton.classList.add('save');
         editButton.innerHTML = '<i class="fas fa-save"></i>';
@@ -309,6 +311,5 @@
       }
     });
   </script>
-  
 </body>
 </html>
