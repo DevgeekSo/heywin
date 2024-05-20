@@ -340,7 +340,7 @@
         });
       });
     });
-    const accessKey = 'EEGfQaRUt49SyQm7metDX_LnGc7btr3ihL9ZNmpVn-Y';
+    const accessKey = 'oBZt77Zc4q8PxbcqvUoBUnPmQgPgY1RWSDcPZeCr3YI';
 
 fetch('https://api.unsplash.com/photos/random?count=5&client_id=' + accessKey)
   .then(response => response.json())
@@ -411,54 +411,6 @@ window.addEventListener('scroll', () => {
     loadMorePosts();
   }
 });
-
-// Initial load of posts
-loadMorePosts();
-document.addEventListener('DOMContentLoaded', function() {
-      // Fetch YouTube videos
-      const youtubeApiKey = 'AIzaSyAnhxYaGAFsyAchzX4I0wkhp0xirR2pwQ8';
-      const youtubeEndpoint = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=motivational&type=video&key=${youtubeApiKey}`;
-      
-      fetch(youtubeEndpoint)
-        .then(response => response.json())
-        .then(data => {
-          data.items.forEach(video => {
-            const videoId = video.id.videoId;
-            const videoTitle = video.snippet.title;
-            const videoThumbnail = video.snippet.thumbnails.medium.url;
-
-            // Create video post element
-            createVideoPost(videoId, videoTitle, videoThumbnail);
-          });
-        })
-        .catch(error => console.error('Error fetching YouTube data:', error));
-    });
-
-    function createVideoPost(videoId, videoTitle, videoThumbnail) {
-      const content = document.getElementById('content');
-
-      const post = document.createElement('div');
-      post.classList.add('post');
-
-      const postContent = `
-        <div class="post-header">
-          <img src="${videoThumbnail}" alt="Video Thumbnail">
-          <div class="username">YouTube</div>
-        </div>
-        <div class="post-content">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="post-caption">${videoTitle}</div>
-        <div class="post-actions">
-          <i class="fas fa-heart"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-share"></i>
-        </div>
-      `;
-
-      post.innerHTML = postContent;
-      content.appendChild(post);
-    }
   </script>
 </body>
 
